@@ -1,6 +1,8 @@
 import {useState} from 'react';
 import {useEffect} from 'react';
 
+import { motion} from 'framer-motion';
+
 import classes from './Loader.module.css';
 
 import MeetupList from "../components/meetups/meetupList";
@@ -8,6 +10,7 @@ import MeetupList from "../components/meetups/meetupList";
 function TotalMeetups() {
   const [isLoading, setIsLoading] = useState(true);
   const [loadedMeetups, setLoadedMeetups] = useState([]);
+ // const [move, setMove] = useState(true);
   
   useEffect(() => {
     setIsLoading(true);
@@ -50,7 +53,9 @@ function TotalMeetups() {
     return (
         <section>
             <h1>All meetups</h1>
+            <motion.div animate={{x:[-200,200,-200]}} transition={{repeat:Infinity, duration:8}}>
             <MeetupList meetups={loadedMeetups }/>
+            </motion.div>
         </section>
     );
 }

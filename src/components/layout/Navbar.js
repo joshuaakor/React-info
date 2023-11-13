@@ -14,6 +14,7 @@ function Navbar() {
     return (
         <header className={classes.header}>
             <div className={classes.logo}>MEETUPS</div>
+            
             <nav>
                 <ul> 
                     <li>
