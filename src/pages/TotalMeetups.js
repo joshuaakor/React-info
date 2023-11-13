@@ -1,6 +1,8 @@
 import {useState} from 'react';
 import {useEffect} from 'react';
 
+import classes from './Loader.module.css';
+
 import MeetupList from "../components/meetups/meetupList";
 
 function TotalMeetups() {
@@ -35,9 +37,10 @@ function TotalMeetups() {
 
     if (isLoading){
       return (
-        <section>
-          <p>Loading...</p>
-        </section>
+        <div className={classes.loadingContainer}>
+          <div className={classes.loadingIcon}></div>
+        </div>
+
       );
     }
   
